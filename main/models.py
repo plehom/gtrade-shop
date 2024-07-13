@@ -32,10 +32,18 @@ class Product(models.Model):
     description = models.CharField(max_length=250)
     price = models.IntegerField()
     category = models.CharField(max_length=125,choices=cat, default="Farovi")
-    image = models.ImageField(upload_to="uploads/")
+    image = models.ImageField(upload_to="static/images/")
+    oem = models.CharField(max_length=50,default="123")
+    fabric = models.CharField(max_length=50,default="123")
     o = models.IntegerField(default=0)
     
-
+    
+#
+#    class CreateCart(models.Manager):
+#        def create_cart(self,request):
+#            cart = self.create(usr=request.user)
+#            return cart
+####
 class Cart(models.Model):
     usr = models.ForeignKey(User,on_delete=models.CASCADE)
 

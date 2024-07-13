@@ -6,7 +6,8 @@
     {%for i in products%}
     <div class="col">
       <div class="card">
-        <img src=".." class="card-img-top" alt="...">
+        <h2>{{i.image}}</h2>
+        <img src="../{{i.image.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{i.name}}</h5>
           <p class="card-text">{{i.description}}</p>

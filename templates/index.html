@@ -10,8 +10,8 @@
 
             GENEL - vaš partner za autodijele! Naša firma GENEL specijalizirana je za distribuciju širokog asortimana autodijelova za sve vrste vozila. Na ovom WebShop-u ćete pronaći čitav spektar komponenti, od najmanjih detalja do kompletnih sistema. Naši stručnjaci su uvijek spremni da vam pomognu u izboru potrebnog dijela i omogućavaju brzu i sigurnu dostavu do vašeg cilja.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">LOGIN</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">REGISTRUJ SE</button>
+          <a href="/login/" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">LOGIN</a>
+          <a href="/register/" type="button" class="btn btn-outline-secondary btn-lg px-4">REGISTRUJ SE</a>
         </div>
       </div>
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card">
         <img src=".." class="card-img-top" alt="...">
@@ -61,6 +61,61 @@
     </div>
   </div>
   <br>
+
+  <!-- About 2 - Bootstrap Brain Component -->
+<section class="py-3 py-md-5">
+  <div class="container">
+    <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+      <div class="col-12 col-lg-6">
+        {%load static%}
+        <img class="img-fluid rounded" loading="lazy" src="{% static 'images/chose1.jpg' %}" alt="About 2">
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="row justify-content-xl-center">
+          <div class="col-12 col-xl-10">
+            <h2 class="mb-3">Zašto odabrati nas ?</h2>
+            <p class="lead fs-4 mb-3 mb-xl-5">Počev od davne 1994. godine, našim klijentima nudimo vrhunsku uslugu uz najkvalitetnije
+               proizvode renomiranih svjetskih proizvođača i najpovoljnije cijene dijelova za kamione i autobuse.
+
+              Pozivamo Vas da nas posjetite ili kontaktirate i uvjerite se u sve navedeno.</p>
+            <div class="d-flex align-items-center mb-3">
+              <div class="me-3 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">Kompanija sa dugogodisnjim iskustvom.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="me-3 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">Najkvalitetniji proizvodi.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-4 mb-xl-5">
+              <div class="me-3 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+              </div>
+              <div>
+                <p class="fs-5 m-0">Najbolja usluga.</p>
+              </div>
+            </div>
+            <button type="button" class="btn bsb-btn-xl btn-outline-primary rounded-pill">Connect Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   
 

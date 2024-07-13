@@ -12,31 +12,163 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">GENEL TRADE</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact">KONTAKT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="shop/">SHOP</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+        <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+          height="15"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
         {%block main%}
 
         {%endblock main%}
+
+        <section class="">
+          <!-- Footer -->
+          <footer class="text-center text-white" style="background-color: #0a4275;">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+              <!-- Section: CTA -->
+              <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                  <div class="d-flex justify-content-center align-items-center flex-column">
+                    
+                    <img src="https://geneltrade.ba/wp-content/uploads/2017/04/genelwhite.svg"/>
+                    <p>
+                      GENEL d.o.o. Sarajevo je kompanija sa dugogodišnjim iskustvom u unutrašnjoj i 
+                      vanjskoj trgovini autodijelovima za teretna vozila, autobuse, kao i putničke automobile.
+                    </p>
+                  </div>
+                  <span class="me-3">Registruj se</span>
+                  <a href="{% url 'register'%}" data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
+                    Sign up!
+                  </a>
+                </p>
+              </section>
+              <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2024 Copyright:
+              <a class="text-white" href="https://geneltrade.com/">GENEL TRADE</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
+        </section>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     </body>
