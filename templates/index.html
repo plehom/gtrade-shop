@@ -1,47 +1,109 @@
 {% extends "base.html" %}
 
 {%block main%}
+<style>
 
-<div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">GENEL TRADE D.O.O WEBSHOP</h1>
-        <p class="lead">
+  header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  /* Media Query for devices withi coarse pointers and no hover functionality */
+  
+  /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+  
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+  
+    header video {
+      display: none;
+    }
+</style>
 
-            GENEL - vaš partner za autodijele! Naša firma GENEL specijalizirana je za distribuciju širokog asortimana autodijelova za sve vrste vozila. Na ovom WebShop-u ćete pronaći čitav spektar komponenti, od najmanjih detalja do kompletnih sistema. Naši stručnjaci su uvijek spremni da vam pomognu u izboru potrebnog dijela i omogućavaju brzu i sigurnu dostavu do vašeg cilja.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <a href="/login/" type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">LOGIN</a>
-          <a href="/register/" type="button" class="btn btn-outline-secondary btn-lg px-4">REGISTRUJ SE</a>
-        </div>
-      </div>
-      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3" src="" alt="slika-hero" width="720">
+<header>
+
+  <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+  <div class="overlay"></div>
+
+  <!-- The HTML5 video element that will create the background video on the header -->
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    {%load static%}
+    <source src="https://videos.pexels.com/video-files/5171156/5171156-uhd_2560_1440_30fps.mp4" type="video/mp4">
+  </video>
+
+  <!-- The header content -->
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">Genel Trade Webshop</h1>
+        <p class="lead mb-0">Vas pouzdan partner</p>
       </div>
     </div>
   </div>
+</header>
+<br><br><br><br><br>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
+  
+
+  <div class="row row-cols-1 row-cols-md-3 g-3">
+    <div class="col-md-3">
       <div class="card">
-        <img src=".." class="card-img-top" alt="...">
+        <img src="https://www.minit-tune.com/wp-content/uploads/2023/09/note-3295534336868720013-MinitTune-DifferentBrands-Blog.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Gume</h5>
           <p class="card-text">U našoj ponudi nudimo ljetne i zimske gume najpoznatijih svjetskih proizvođača u svim veličinama i modelima za dostavna vozila, kombi vozila, kamione, autobuse i gume za radne strojeve.</p>
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-3">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="https://slika.nezavisne.rs/2018/04/750x450/20180420135028_474774.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Dijelovi Motora</h5>
           <p class="card-text">U našoj ponudi dijelova motora nudimo mnoštvo proizvoda, između ostalog, remenje i razvod motora, termostate, hladnjake, pumpe vode, bregaste osovine, brtve, nosače motora i ostalo.</p>
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-3">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="https://cdn.club-magazin.autodoc.de/uploads/sites/30/2020/11/new-disc-brake.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Kočioni Sistemi</h5>
           <p class="card-text">Kočioni sistem je jedan od najvažnijih sigurnosnih elemenata na vozilu. U našoj ponudi imamo diskove, disk pločice, pakne, kočione cilindre, kočione tekućine, ABS senzore za sve vrste vozila.
@@ -50,9 +112,9 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-md-3">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="https://n1info.ba/wp-content/uploads/2023/06/19/1687163719-vehicle-3872550_1280-1200x800.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Hlađenje i Klime</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
