@@ -8,7 +8,9 @@ from django.http import HttpResponse
 from .models import Product,Cart,CartItem
 from django.contrib.auth.models import User
 
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
+
+from django.contrib.postgres.search import SearchVector
 
 
 
@@ -16,6 +18,7 @@ from django.contrib.auth import authenticate
 
 class Index(View):
     def get(self,request):
+        print(request.user)
         products = Product.objects.all()
         return render(request,"index.html",{"products":products})
 
@@ -46,6 +49,7 @@ class LoginView(View):
             if user is not None:
                 print("USLO")
                 print(user)
+                login(request,user)
                 cart = Cart.objects.filter(usr=user).first()
                 if cart is None:
                     c = Cart.objects.create(usr=user)
@@ -70,6 +74,10 @@ class ShopView(View):
     def get(self,request):
         products = Product.objects.all()
         return render(request,"shop.html",{"products":products})
+    def post(self,request):
+        response = Product.objects.filter(oem=request.POST["search"])
+        print(request.POST["search"])
+        return render(request,"shop.html",{"products":response})
 
 class ProductDetailView(DetailView):
     model = Product
