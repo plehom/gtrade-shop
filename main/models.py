@@ -32,7 +32,7 @@ class Product(models.Model):
     description = models.CharField(max_length=250)
     price = models.IntegerField()
     category = models.CharField(max_length=125,choices=cat, default="Farovi")
-    image = models.ImageField(upload_to="static/images/")
+    image = models.ImageField(upload_to="static/images/",default="static/images/genelthumb.jpg")
     oem = models.CharField(max_length=50,default="123")
     fabric = models.CharField(max_length=50,default="123")
     o = models.IntegerField(default=0)
@@ -50,3 +50,11 @@ class Cart(models.Model):
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart,on_delete=models.CASCADE)
     item = models.ForeignKey(Product,  on_delete=models.CASCADE)
+
+class Order(models.Model):
+    cart = models.ForeignKey(Cart,on_delete=models.CASCADE,default="")
+    company = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    additional = models.CharField(max_length=250,default="")
+

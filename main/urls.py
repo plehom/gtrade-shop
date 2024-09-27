@@ -10,5 +10,7 @@ urlpatterns = [
     path("shop/",views.ShopView.as_view(),name="shop"),
     path("products/<pk>/",views.ProductDetailView.as_view(),name="product"),
     path("cart/",views.CartView.as_view(),name="cart"),
-    path("category/<cat>/",views.CategoryListingView.as_view(),name="category")
+    path("category/<cat>/",views.CategoryListingView.as_view(),name="category"),
+    path('upload/', views.upload_excel, name='upload_excel'),
+
 ]

@@ -118,14 +118,73 @@
                   <span><strong></strong></span>
                 </li>
               </ul>
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">
-                Go to checkout
-              </button>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  NARUČI
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Vasa Narudzba</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Popunite Formu</h4>
+        <form method="POST">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              
+          
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="text" id="form6Example3" placeholder="*Opcionalno" class="form-control" />
+              <label class="form-label" for="form6Example3" >Ime Firme</label>
+            </div>
+          
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="text" id="form6Example4" class="form-control" />
+              <label class="form-label" for="form6Example4">Adresa</label>
+            </div>
+          
+           
+          
+            <!-- Number input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="number" id="form6Example6" class="form-control" />
+              <label class="form-label" for="form6Example6">Broj Telefona</label>
+            </div>
+          
+            <!-- Message input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+              <label class="form-label" for="form6Example7">Dodatne Informacije</label>
+            </div>
+          
+            
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Naruči</button>
+          </form>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OTKAŽI
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
 {%endblock%}

@@ -49,4 +49,7 @@ class CreateProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ["name","description","price","category","image"]
+
+class UploadExcelForm(forms.Form):
+    file = forms.FileField()
         

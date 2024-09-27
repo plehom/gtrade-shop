@@ -5,12 +5,15 @@ from django.views.generic.detail import DetailView
 from django.views import View
 from .forms import RegistrationForm,LoginForm,CreateProductForm
 from django.http import HttpResponse
-from .models import Product,Cart,CartItem
+from .models import Product,Cart,CartItem,Order
 from django.contrib.auth.models import User
 
 from django.contrib.auth import authenticate,login
 
 from django.contrib.postgres.search import SearchVector
+
+from .forms import UploadExcelForm
+import pandas as pd
 
 
 
@@ -110,9 +113,36 @@ class CartView(View):
             self.suma = self.suma + i.item.price
         return render(request,"cart.html",{"items":items,"suma":self.suma})
 
-
+##class OrderView(View):
+    ##def post(self,request):
+        
 class CategoryListingView(View):
     def get(self,request,cat):
         products = Product.objects.filter(category=cat)
         return render(request,"category.html",{"products":products})
+
+
+def upload_excel(request):
+    if request.method == "POST":
+        form = UploadExcelForm(request.POST, request.FILES)
+        if form.is_valid():
+            excel_file = request.FILES['file']
+            
+            # Učitavanje Excel datoteke koristeći Pandas
+            df = pd.read_excel(excel_file)
+            
+            # Iteriranje kroz redove i spašavanje u bazu
+            for _, row in df.iterrows():
+                Product.objects.create(
+                    name=row['B'],
+                    description=row['B'],
+                    price=5,
+                    fabric=row['C']
+                )
+                
+            return redirect('success')  # ili gdje želiš redirektovati nakon uspješnog spašavanja
+    else:
+        form = UploadExcelForm()
+
+    return render(request, 'upload_excel.html', {'form': form})
 
